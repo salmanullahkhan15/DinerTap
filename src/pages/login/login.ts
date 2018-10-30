@@ -2,6 +2,7 @@ import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SignUpPage } from '../sign-up/sign-up';
+import { TypeSelectionPage } from '../type-selection/type-selection';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,7 +24,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   gotoHome() {
-    this.navCtrl.setRoot(HomePage)
+    this.navCtrl.setRoot(TypeSelectionPage)
   }
   gotoSignup() {
     console.log("click ")

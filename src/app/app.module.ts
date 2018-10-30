@@ -1,3 +1,4 @@
+import { TypeSelectionPage } from './../pages/type-selection/type-selection';
 import { SignUpPage } from './../pages/sign-up/sign-up';
 import { ReservationFormPage } from './../pages/reservation-form/reservation-form';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,8 @@ import { AboutUsPage } from '../pages/about-us/about-us';
     LoginPage,
     ReservationFormPage,
     SignUpPage,
-    AboutUsPage
+    AboutUsPage,
+    TypeSelectionPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { AboutUsPage } from '../pages/about-us/about-us';
     LoginPage,
     ReservationFormPage,
     SignUpPage,
-    AboutUsPage
+    AboutUsPage,
+    TypeSelectionPage
   ],
   providers: [
     StatusBar,

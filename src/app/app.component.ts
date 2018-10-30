@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { ReservationFormPage } from '../pages/reservation-form/reservation-form';
+import { TypeSelectionPage } from '../pages/type-selection/type-selection';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,8 +25,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
+      { title: 'Home', component: TypeSelectionPage },
+      // { title: 'List', component: ListPage },
       { title: 'Reservation', component: ReservationFormPage },
       { title: 'About Us', component: AboutUsPage }
     ];
