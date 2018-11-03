@@ -9,6 +9,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { ReservationFormPage } from '../pages/reservation-form/reservation-form';
 import { TypeSelectionPage } from '../pages/type-selection/type-selection';
+import { FilterPage } from '../pages/filter/filter';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +17,8 @@ import { TypeSelectionPage } from '../pages/type-selection/type-selection';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  // rootPage: any = LoginPage;
+  rootPage: any = FilterPage;
 
   pages: Array<{ title: string, component: any }>;
 
@@ -28,7 +30,8 @@ export class MyApp {
       { title: 'Home', component: TypeSelectionPage },
       // { title: 'List', component: ListPage },
       { title: 'Reservation', component: ReservationFormPage },
-      { title: 'About Us', component: AboutUsPage }
+      { title: 'About Us', component: AboutUsPage },
+      { title: 'Filter', component: FilterPage }
     ];
 
   }

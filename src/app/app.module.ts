@@ -1,3 +1,4 @@
+import { FilterPage } from './../pages/filter/filter';
 import { TypeSelectionPage } from './../pages/type-selection/type-selection';
 import { SignUpPage } from './../pages/sign-up/sign-up';
 import { ReservationFormPage } from './../pages/reservation-form/reservation-form';
@@ -23,7 +24,8 @@ import { AboutUsPage } from '../pages/about-us/about-us';
     ReservationFormPage,
     SignUpPage,
     AboutUsPage,
-    TypeSelectionPage
+    TypeSelectionPage,
+    FilterPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { AboutUsPage } from '../pages/about-us/about-us';
     ReservationFormPage,
     SignUpPage,
     AboutUsPage,
-    TypeSelectionPage
+    TypeSelectionPage,
+    FilterPage
   ],
   providers: [
     StatusBar,
