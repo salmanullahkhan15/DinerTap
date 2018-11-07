@@ -1,3 +1,4 @@
+import { RestaurantMenuPage } from './../pages/restaurant-menu/restaurant-menu';
 import { FilterPage } from './../pages/filter/filter';
 import { TypeSelectionPage } from './../pages/type-selection/type-selection';
 import { SignUpPage } from './../pages/sign-up/sign-up';
@@ -14,7 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { AboutUsPage } from '../pages/about-us/about-us';
-
+import { StarRatingModule } from 'ionic3-star-rating';
 @NgModule({
   declarations: [
     MyApp,
@@ -25,10 +26,12 @@ import { AboutUsPage } from '../pages/about-us/about-us';
     SignUpPage,
     AboutUsPage,
     TypeSelectionPage,
-    FilterPage
+    FilterPage,
+    RestaurantMenuPage
   ],
   imports: [
     BrowserModule,
+    StarRatingModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -41,7 +44,8 @@ import { AboutUsPage } from '../pages/about-us/about-us';
     SignUpPage,
     AboutUsPage,
     TypeSelectionPage,
-    FilterPage
+    FilterPage,
+    RestaurantMenuPage
   ],
   providers: [
     StatusBar,

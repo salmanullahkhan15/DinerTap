@@ -1,18 +1,68 @@
-<!--
-  Generated template for the RestaurantMenuPage page.
+<ion-content>
+  <img src="assets/imgs/burger-orignal.jpg" class="res-img">
+  <div class="header-div">
+    <div class="header-top">
+      <i class="icon-arrow-left" (click)="goBack()"></i>
+      <div class="top-banner">
+        <p>NEW</p>
+      </div>
+      <i class="icon-info"></i>
+    </div>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+    <div class="res-details">
+      <h3>Burger Lab</h3>
+      <p>Lucky One Mall</p>
+      <div class="rating-stars">
+        <ionic3-star-rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F8CC6D" defaultColor="#f4f4f4"
+          readonly="true" rating="3">
+        </ionic3-star-rating>
+        <p class="rating-num">(4.8)</p>
+      </div>
+      <div>
+        <span>$</span>
+        <span>$</span>
+        <span>$</span>
+        <span>$</span>
+      </div>
+    </div>
 
-  <ion-navbar>
-    <ion-title>RestaurantMenu</ion-title>
-  </ion-navbar>
+    <i class="icon-heart"> </i>
 
-</ion-header>
+    <div class="del-time">
+      <p class="del-txt">Delivery in</p>
+      <p class="del-min">45 Mins</p>
+    </div>
+  </div>
 
+  <div class="scoll-div-custom">
+    <div class="scroll-parent">
+      <i class="icon-arrow-left left-ic" (click)="scrollLeft()"></i>
 
-<ion-content padding>
+      <ion-scroll #scrollCat scrollX="true" style="width: 85vw; height: 40px; margin: auto;">
+        <ion-row nowrap>
+          <div *ngFor="let item of categoryArray; let i=index" class="inner-scroll" [ngClass]="item.isSelected? 'cat-selected':''"
+            (click)="selectCategory(i)">
+            <p class="cat-title">{{item.text}}</p>
+          </div>
+        </ion-row>
+      </ion-scroll>
+      <i class="icon-arrow-right right-ic" (click)="scrollRight()"></i>
+    </div>
+  </div>
 
+  <ion-list class="item-menu-list">
+    <button ion-item *ngFor="let item of menuItems" (click)="itemSelected(item)">
+      <div class="text-menu-item">
+        <p class="menu-item-title">{{item.text}}</p>
+        <p class="menu-item-description">{{item.des}}</p>
+        <p class="menu-item-price">{{item.price}}</p>
+      </div>
+    </button>
+  </ion-list>
+  <div class="fab-cart">
+    <button ion-fab>
+      <i class="icon-bag"></i>
+    </button>
+  </div>
+  <ion-badge class="cart-badge" *ngIf="selectedItemCount > 0">{{selectedItemCount}}</ion-badge>
 </ion-content>

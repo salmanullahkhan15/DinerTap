@@ -127,7 +127,6 @@ page-filter {
         background: #fff;
         border-radius: 150px;
         text-align: center;
-        border: 1px solid #000;
         padding: 3%;
     }
     .inner-scroll-offer p {
@@ -136,5 +135,17 @@ page-filter {
     .offer-div ion-row {
         width: 90% !important;
         margin-top: 8%;
+    }
+    .pink1 {
+        border: 1px solid color($colors, dinerPink);
+        color: color($colors, dinerPink);
+    }
+    .blue1 {
+        border: 1px solid #a74ef3;
+        color: #a74ef3;
+    }
+    .green1 {
+        border: 1px solid #3abb08;
+        color: #3abb08;
     }
 }
