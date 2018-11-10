@@ -1,20 +1,29 @@
-import { TypeSelectionPage } from './../type-selection/type-selection';
+import { MapPage } from './../map/map';
+import { FilterPage } from './../filter/filter';
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Content } from 'ionic-angular';
+import { NavController, NavParams, Content, Slides } from 'ionic-angular';
+import { RestaurantMenuPage } from '../restaurant-menu/restaurant-menu';
+
 /**
- * Generated class for the FilterPage page.
+ * Generated class for the RestaurantListingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
+
 @Component({
-  selector: 'page-filter',
-  templateUrl: 'filter.html',
+  selector: 'page-restaurant-listing',
+  templateUrl: 'restaurant-listing.html',
 })
-export class FilterPage {
+export class RestaurantListingPage {
   @ViewChild('scrollCat') scrollCat: Content;
+  // @ViewChild('scrollPop') scrollPop: Content;
+
+  @ViewChild(Slides) slides: Slides;
+
   categoryArray: any = [];
+  resList: any = []
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.categoryArray = [
@@ -54,11 +63,19 @@ export class FilterPage {
         image: "assets/imgs/filter-assets/vegetarian-food.png",
         text: "Veggies",
       },
+
     ]
   }
 
+  ionViewWillEnter() {
+    this.resList = []
+    for (let i = 0; i < 5; i++) {
+      this.resList.push("asdf")
+    }
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FilterPage');
+    console.log('ionViewDidLoad RestaurantListingPage');
   }
 
   scrollLeft() {
@@ -76,8 +93,18 @@ export class FilterPage {
 
   }
 
-  goBack() {
-    this.navCtrl.pop()
+
+  gotoRestaurantMenu() {
+    this.navCtrl.push(RestaurantMenuPage)
   }
 
+  gotoFilterPage() {
+    this.navCtrl.push(FilterPage)
+  }
+
+  gotoMapPage() {
+    this.navCtrl.push(MapPage)
+  }
 }
+
+

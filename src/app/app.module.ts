@@ -1,3 +1,5 @@
+import { MapPage } from './../pages/map/map';
+import { RestaurantListingPage } from './../pages/restaurant-listing/restaurant-listing';
 import { RestaurantMenuPage } from './../pages/restaurant-menu/restaurant-menu';
 import { FilterPage } from './../pages/filter/filter';
 import { TypeSelectionPage } from './../pages/type-selection/type-selection';
@@ -16,6 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { AboutUsPage } from '../pages/about-us/about-us';
 import { StarRatingModule } from 'ionic3-star-rating';
+
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     MyApp,
@@ -27,11 +31,14 @@ import { StarRatingModule } from 'ionic3-star-rating';
     AboutUsPage,
     TypeSelectionPage,
     FilterPage,
-    RestaurantMenuPage
+    RestaurantMenuPage,
+    RestaurantListingPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
     StarRatingModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -45,7 +52,9 @@ import { StarRatingModule } from 'ionic3-star-rating';
     AboutUsPage,
     TypeSelectionPage,
     FilterPage,
-    RestaurantMenuPage
+    RestaurantMenuPage,
+    RestaurantListingPage,
+    MapPage
   ],
   providers: [
     StatusBar,

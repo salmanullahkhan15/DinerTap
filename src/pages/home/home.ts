@@ -1,3 +1,4 @@
+import { RestaurantListingPage } from './../restaurant-listing/restaurant-listing';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -14,5 +15,7 @@ export class HomePage {
 
 
   }
-
+  gotoRestaurantList() {
+    this.navCtrl.setRoot(RestaurantListingPage)
+  }
 }

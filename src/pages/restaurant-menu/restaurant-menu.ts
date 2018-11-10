@@ -97,47 +97,65 @@ export class RestaurantMenuPage {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces ",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: "assets/imgs/menu-img.jpg"
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: "assets/imgs/menu-img.jpg"
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }, {
       id: 0,
       text: "Chicken Nuggets",
       des: "6 Pieces",
-      price: "Rs190"
+      price: "Rs190",
+      count: 0,
+      img: null
     }]
 
   }
@@ -169,13 +187,15 @@ export class RestaurantMenuPage {
     this.categoryArray[i].isSelected = true;
   }
 
-  itemSelected(item) {
+  itemSelected(i) {
+    this.menuItems[i].count += 1
+
     this.selectedItemCount += 1
     console.log(this.selectedItemCount)
   }
 
   goBack() {
-    this.navCtrl.setRoot(TypeSelectionPage)
+    this.navCtrl.pop()
   }
 
 }

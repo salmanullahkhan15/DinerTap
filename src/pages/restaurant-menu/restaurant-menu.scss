@@ -81,9 +81,11 @@
          padding: 1vw;
          text-align: center;
          margin-left: 39vw;
-         margin-top: 10vw;
+         /* margin-top: 10vw; */
          padding-left: 4vw;
          padding-right: 4vw;
+         position: absolute;
+         bottom: 2px;
          background: color($colors, dinerPink);
      }
      .del-time .del-txt {
@@ -170,16 +172,60 @@
      .menu-item-title {
          font-size: 15px;
          color: color($colors, dinerPink);
-         width: 70%;
+         width: 60%;
+         float: left;
+     }
+     .menu-item-count {
+         text-align: right;
+         width: 40%;
+         float: right;
+         color: color($colors, dinerPink);
      }
      .menu-item-description {
          font-size: 11px;
-         color: color($colors, dinerGrey);
-         width: 70%;
+         color: #000;
+         width: 60%;
+         float: left;
      }
-     .text-menu-item {}
      .menu-item-price {
          text-align: right;
+         width: 40%;
+         float: right;
+         color: color($colors, dinerGrey);
+     }
+     .menu-item-title-img {
+         font-size: 15px;
+         color: color($colors, dinerPink);
+         width: 50%;
+         float: left;
+     }
+     .menu-item-count-img {
+         text-align: right;
+         width: 20%;
+         float: right;
+         color: color($colors, dinerPink);
+     }
+     .menu-item-description-img {
+         font-size: 11px;
+         color: #000;
+         width: 50%;
+         float: left;
+     }
+     .menu-item-price-img {
+         text-align: right;
+         width: 20%;
+         float: right;
+         color: color($colors, dinerGrey);
+     }
+     .text-menu-item {
+         float: left;
+         width: 70%;
+         margin-top: 7%;
+     }
+     .menu-item-img {
+         width: 25%;
+         float: left;
+         margin-right: 5%;
      }
      .fab-cart {
          position: sticky;
@@ -213,5 +259,9 @@
      }
      .item-menu-list {
          margin-bottom: -10%;
+     }
+     .item-count-badge {
+         color: color($colors, dinerYellow);
+         background-color: color($colors, dinerPink);
      }
  }

@@ -51,11 +51,15 @@
   </div>
 
   <ion-list class="item-menu-list">
-    <button ion-item *ngFor="let item of menuItems" (click)="itemSelected(item)">
-      <div class="text-menu-item">
-        <p class="menu-item-title">{{item.text}}</p>
-        <p class="menu-item-description">{{item.des}}</p>
-        <p class="menu-item-price">{{item.price}}</p>
+    <button ion-item *ngFor="let item of menuItems; let i = index" (click)="itemSelected(i)">
+      <img class="menu-item-img" [src]="item.img" *ngIf="item.img != null">
+      <div [ngClass]="item.img == null?'':'text-menu-item'">
+        <p [ngClass]="item.img == null?'menu-item-title':'menu-item-title-img'">{{item.text}}</p>
+        <p [ngClass]="item.img == null?'menu-item-count':'menu-item-count-img'">
+          <ion-badge class="item-count-badge">{{item.count}}</ion-badge>
+        </p>
+        <p [ngClass]="item.img == null?'menu-item-description':'menu-item-description-img'">{{item.des}}</p>
+        <p [ngClass]="item.img == null?'menu-item-price':'menu-item-price-img'">{{item.price}}</p>
       </div>
     </button>
   </ion-list>

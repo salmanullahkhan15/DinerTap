@@ -1,3 +1,5 @@
+import { MapPage } from './../pages/map/map';
+import { RestaurantListingPage } from './../pages/restaurant-listing/restaurant-listing';
 import { RestaurantMenuPage } from './../pages/restaurant-menu/restaurant-menu';
 import { AboutUsPage } from './../pages/about-us/about-us';
 import { Component, ViewChild } from '@angular/core';
@@ -19,7 +21,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
-  // rootPage: any = RestaurantMenuPage;
+  // rootPage: any = MapPage;
 
   pages: Array<{ title: string, component: any }>;
 
@@ -32,8 +34,9 @@ export class MyApp {
       // { title: 'List', component: ListPage },
       { title: 'Reservation', component: ReservationFormPage },
       { title: 'About Us', component: AboutUsPage },
-      { title: 'Filter', component: FilterPage },
-      { title: 'Menu', component: RestaurantMenuPage }
+      // { title: 'Filter', component: FilterPage },
+      // { title: 'Menu', component: RestaurantMenuPage },
+      // { title: 'Restaurant', component: RestaurantListingPage }
     ];
 
   }
