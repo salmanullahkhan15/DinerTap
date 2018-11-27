@@ -1,3 +1,6 @@
+import { ComingSoonPage } from './../pages/coming-soon/coming-soon';
+import { OrderTrackingPage } from './../pages/order-tracking/order-tracking';
+import { CheckoutShippingPage } from './../pages/checkout-shipping/checkout-shipping';
 import { MapPage } from './../pages/map/map';
 import { RestaurantListingPage } from './../pages/restaurant-listing/restaurant-listing';
 import { RestaurantMenuPage } from './../pages/restaurant-menu/restaurant-menu';
@@ -13,6 +16,7 @@ import { LoginPage } from '../pages/login/login';
 import { ReservationFormPage } from '../pages/reservation-form/reservation-form';
 import { TypeSelectionPage } from '../pages/type-selection/type-selection';
 import { FilterPage } from '../pages/filter/filter';
+import { TrackOrderMapPage } from '../pages/track-order-map/track-order-map';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +25,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
-  // rootPage: any = MapPage;
+  // rootPage: any = CheckoutShippingPage;
 
   pages: Array<{ title: string, component: any }>;
 
@@ -34,6 +38,12 @@ export class MyApp {
       // { title: 'List', component: ListPage },
       { title: 'Reservation', component: ReservationFormPage },
       { title: 'About Us', component: AboutUsPage },
+      { title: 'Checkout', component: CheckoutShippingPage },
+      { title: 'Order Tracking', component: OrderTrackingPage },
+      { title: 'Order Tracking Map', component: TrackOrderMapPage },
+      { title: 'Coming Soon', component: ComingSoonPage },
+
+
       // { title: 'Filter', component: FilterPage },
       // { title: 'Menu', component: RestaurantMenuPage },
       // { title: 'Restaurant', component: RestaurantListingPage }

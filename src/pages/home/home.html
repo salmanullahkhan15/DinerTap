@@ -21,16 +21,19 @@
   </div>
 
   <div class="loc-input-div">
-    <i class="icon-target"></i>
+    <ion-icon name="paper-plane" (click)="tryGeolocation()"></ion-icon>
     <ion-list>
-
-      <ion-item>
-        <ion-input type="text" placeholder="Enter your block & area"></ion-input>
+      <ion-item class="location-item">
+        <!-- <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"></ion-searchbar> -->
+        <ion-input [(ngModel)]="autocomplete.input" (input)="updateSearchResults()" placeholder="Enter your block & area"></ion-input>
       </ion-item>
-
     </ion-list>
   </div>
-
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list>
   <div class="custom-div-btn">
     <div class="custom-btn" (click)="gotoRestaurantList()">
       <i class="icon-directions"></i>

@@ -1,3 +1,8 @@
+import { TrackOrderMapPage } from './../pages/track-order-map/track-order-map';
+import { CartPage } from './../pages/cart/cart';
+import { OrderTrackingPage } from './../pages/order-tracking/order-tracking';
+import { CheckoutPaymentPage } from './../pages/checkout-payment/checkout-payment';
+import { CheckoutShippingPage } from './../pages/checkout-shipping/checkout-shipping';
 import { MapPage } from './../pages/map/map';
 import { RestaurantListingPage } from './../pages/restaurant-listing/restaurant-listing';
 import { RestaurantMenuPage } from './../pages/restaurant-menu/restaurant-menu';
@@ -18,8 +23,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { AboutUsPage } from '../pages/about-us/about-us';
 import { StarRatingModule } from 'ionic3-star-rating';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { CheckoutConfirmPage } from '../pages/checkout-confirm/checkout-confirm';
+import { ComingSoonPage } from '../pages/coming-soon/coming-soon';
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +42,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     FilterPage,
     RestaurantMenuPage,
     RestaurantListingPage,
-    MapPage
+    MapPage,
+    CheckoutShippingPage,
+    CheckoutPaymentPage,
+    CheckoutConfirmPage,
+    OrderTrackingPage,
+    CartPage,
+    ComingSoonPage,
+    TrackOrderMapPage
   ],
   imports: [
     BrowserModule,
@@ -54,11 +70,21 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     FilterPage,
     RestaurantMenuPage,
     RestaurantListingPage,
-    MapPage
+    MapPage,
+    CheckoutShippingPage,
+    CheckoutPaymentPage,
+    CheckoutConfirmPage,
+    OrderTrackingPage,
+    CartPage,
+    ComingSoonPage,
+    TrackOrderMapPage
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    NativeGeocoder,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

@@ -1,3 +1,4 @@
+import { CartPage } from './../cart/cart';
 import { MapPage } from './../map/map';
 import { FilterPage } from './../filter/filter';
 import { Component, ViewChild } from '@angular/core';
@@ -104,6 +105,10 @@ export class RestaurantListingPage {
 
   gotoMapPage() {
     this.navCtrl.push(MapPage)
+  }
+
+  gotoCart() {
+    this.navCtrl.push(CartPage)
   }
 }
 

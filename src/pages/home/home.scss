@@ -64,12 +64,13 @@ page-home {
         border: none !important;
         box-shadow: none !important;
     }
-    .loc-input-div i {
+    .loc-input-div ion-icon {
         float: right;
         position: relative;
         right: 18%;
         z-index: 1;
-        margin-top: 5%;
+        margin-top: 2%;
+        font-size: 30px;
         color: color($colors, dinerPink);
     } //
     //
@@ -211,5 +212,12 @@ page-home {
     .top-txt .top-txt-p2 {
         color: color($colors, dinerGrey)
     } //areas we cover:
-
+    .location-item {
+        padding-right: 10%;
+        padding-left: 2%;
+    }
+    .location-item.input-has-value {
+        border: none !important;
+        box-shadow: none !important;
+    }
 }
