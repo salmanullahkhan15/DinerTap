@@ -15,3 +15,13 @@
 .input-has-focus {
     border-bottom: 1px solid color($colors, dinerYellow) !important;
 }
+
+.confirm-payment-alert .alert-button:nth-child(2) {
+    color: color($colors, dinerPink) !important;
+}
+
+.confirm-payment-alert .alert-button:first-child {
+    color: color($colors, dinerGrey) !important;
+}
+
+.toast-class {}

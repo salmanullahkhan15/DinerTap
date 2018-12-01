@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Content } from 'ionic-angular';
 import { TypeSelectionPage } from '../type-selection/type-selection';
+import { CartPage } from '../cart/cart';
 
 /**
  * Generated class for the RestaurantMenuPage page.
@@ -197,5 +198,10 @@ export class RestaurantMenuPage {
   goBack() {
     this.navCtrl.pop()
   }
-
+  gotoCart() {
+    var data = {
+      pushPage: "hd"
+    }
+    this.navCtrl.push(CartPage, data)
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { RestaurantListingPage } from '../restaurant-listing/restaurant-listing';
 
 /**
  * Generated class for the ReservationFormPage page.
@@ -20,5 +21,7 @@ export class ReservationFormPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReservationFormPage');
   }
-
+  gotoRestaurantListing() {
+    this.navCtrl.push(RestaurantListingPage)
+  }
 }

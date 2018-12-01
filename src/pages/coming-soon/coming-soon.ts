@@ -20,5 +20,7 @@ export class ComingSoonPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ComingSoonPage');
   }
-
+  goBack() {
+    this.navCtrl.pop();
+  }
 }

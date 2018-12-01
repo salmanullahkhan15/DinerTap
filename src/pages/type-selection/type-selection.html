@@ -25,24 +25,24 @@
 
   <div class="type-items">
     <ion-row class="row-one">
-      <ion-col><img src="assets/imgs/deliveryman.png">
+      <ion-col (click)="gotoHome()"><img src="assets/imgs/deliveryman.png">
         <p>Home Delivery</p>
       </ion-col>
-      <ion-col><img src="assets/imgs/bag.png">
+      <ion-col (click)="gotoReservationPage()"><img src="assets/imgs/bag.png">
         <p>Take Away</p>
       </ion-col>
-      <ion-col><img src="assets/imgs/reserved.png">
+      <ion-col (click)="gotoReservationPage()"><img src="assets/imgs/reserved.png">
         <p>Reservation</p>
       </ion-col>
     </ion-row>
     <ion-row class="row-two">
-      <ion-col><img src="assets/imgs/dinner.png">
+      <ion-col (click)="openBarcode()"><img src="assets/imgs/dinner.png">
         <p>Dine In</p>
       </ion-col>
-      <ion-col><img src="assets/imgs/parking.png">
+      <ion-col (click)="gotoComingSoon()"><img src="assets/imgs/parking.png">
         <p>Car Dine In</p>
       </ion-col>
-      <ion-col><img src="assets/imgs/pay.png">
+      <ion-col (click)="openBarcode()"><img src="assets/imgs/pay.png">
         <p>Mobile Pay</p>
       </ion-col>
     </ion-row>

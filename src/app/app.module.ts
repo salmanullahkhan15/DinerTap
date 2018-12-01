@@ -29,6 +29,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CheckoutConfirmPage } from '../pages/checkout-confirm/checkout-confirm';
 import { ComingSoonPage } from '../pages/coming-soon/coming-soon';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { GeneralProvider } from '../providers/general/general';
 @NgModule({
   declarations: [
     MyApp,
@@ -85,7 +87,10 @@ import { ComingSoonPage } from '../pages/coming-soon/coming-soon';
     SplashScreen,
     Geolocation,
     NativeGeocoder,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    BarcodeScanner,
+    GeneralProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    GeneralProvider
   ]
 })
 export class AppModule { }

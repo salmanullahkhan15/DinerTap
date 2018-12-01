@@ -39,10 +39,10 @@
   <!-- <div class="payment-type"> -->
   <div class="type-items">
     <ion-row class="row-one">
-      <ion-col class="col1"><img src="assets/imgs/new/money.png">
+      <ion-col (click)="selectMethod(1)" class="col1" [ngClass]="selectedMethod == 1? 'selected-method':''"><img src="assets/imgs/new/money.png">
         <p>Cash</p>
       </ion-col>
-      <ion-col class="col2"><img src="assets/imgs/new/wallet.png">
+      <ion-col (click)="selectMethod(2)" class="col2" [ngClass]="selectedMethod == 2? 'selected-method':''"><img src="assets/imgs/new/wallet.png">
         <p>Wallet</p>
       </ion-col>
     </ion-row>
@@ -50,7 +50,7 @@
   <!-- </div> -->
 
   <div class="custom-div-btn">
-    <div class="custom-btn" (click)="gotoCheckoutConfirm()">
+    <div class="custom-btn" (click)="presentConfirmPayment()">
       <i class="icon-check"></i>
       <p>CONFIRM PAYMENT</p>
     </div>

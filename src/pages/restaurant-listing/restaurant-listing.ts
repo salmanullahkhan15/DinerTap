@@ -108,7 +108,10 @@ export class RestaurantListingPage {
   }
 
   gotoCart() {
-    this.navCtrl.push(CartPage)
+    var data = {
+      pushPage: "hd"
+    }
+    this.navCtrl.push(CartPage, data)
   }
 }
 

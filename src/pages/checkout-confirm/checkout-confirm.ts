@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { OrderTrackingPage } from '../order-tracking/order-tracking';
 
 /**
  * Generated class for the CheckoutConfirmPage page.
@@ -23,5 +24,9 @@ export class CheckoutConfirmPage {
 
   goBack() {
     this.navCtrl.pop({ animate: true, direction: 'back' })
+  }
+
+  gotoOrderTrackingPage() {
+    this.navCtrl.push(OrderTrackingPage)
   }
 }

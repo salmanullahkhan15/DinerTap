@@ -164,4 +164,7 @@ page-checkout-payment {
     //
     //TYPE
     //
+    .selected-method {
+        border-color: color($colors, dinerPink) !important;
+    }
 }
