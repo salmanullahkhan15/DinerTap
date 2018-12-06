@@ -81,8 +81,7 @@ page-sign-up {
     }
     .bottom-div {
         width: 100%;
-        float: left;
-        // position: absolute;
+        float: left; // position: absolute;
         // bottom: 0;
     }
     .bottom-left {
@@ -109,6 +108,10 @@ page-sign-up {
     }
     .logo-div img {
         width: 40%;
+        text-align: center;
+    }
+    .error-div p {
+        color: red;
         text-align: center;
     }
 }

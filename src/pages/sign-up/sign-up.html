@@ -15,23 +15,28 @@
   <div class="input-div">
     <ion-list>
       <ion-item class="input-item-custom">
-        <ion-input type="text" placeholder="Username"></ion-input>
+        <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
       </ion-item>
 
       <ion-item class="input-item-custom">
-        <ion-input type="text" placeholder="Email"></ion-input>
+        <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
       </ion-item>
 
       <ion-item class="input-item-custom">
-        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-input type="tel" placeholder="Mobile no" [(ngModel)]="phone"></ion-input>
       </ion-item>
 
       <ion-item class="input-item-custom">
-        <ion-input type="text" placeholder="Confirm Password"></ion-input>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item-custom">
+        <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword"></ion-input>
       </ion-item>
       <ion-item class="btn-item">
-        <p (click)="gotoHome()">Sign Up</p>
+        <p (click)="registerUser()">Sign Up</p>
       </ion-item>
+      <div [innerHtml]="errorHtml" *ngIf="errorHtml != 'false'" class="error-div"></div>
     </ion-list>
   </div>
 

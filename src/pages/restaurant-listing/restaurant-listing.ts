@@ -25,8 +25,9 @@ export class RestaurantListingPage {
 
   categoryArray: any = [];
   resList: any = []
-
+  latlngGlobal: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
     this.categoryArray = [
       {
         id: 0,
@@ -69,6 +70,9 @@ export class RestaurantListingPage {
   }
 
   ionViewWillEnter() {
+    this.latlngGlobal = this.navParams.get("latlng")
+    console.log(this.latlngGlobal)
+
     this.resList = []
     for (let i = 0; i < 5; i++) {
       this.resList.push("asdf")
@@ -81,17 +85,12 @@ export class RestaurantListingPage {
 
   scrollLeft() {
     console.log("here")
-
     this.scrollCat._scrollContent.nativeElement.scrollTo({ left: -100000, top: 0, behavior: 'smooth' });
-
-
   }
 
   scrollRight() {
     console.log("here")
-
     this.scrollCat._scrollContent.nativeElement.scrollTo({ left: 100000, top: 0, behavior: 'smooth' });
-
   }
 
 

@@ -1,3 +1,4 @@
+import { ApiProvider } from './../../providers/api/api';
 import { RestaurantListingPage } from './../restaurant-listing/restaurant-listing';
 import { Component, NgZone } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
@@ -19,11 +20,13 @@ export class HomePage {
   geocoder: any
   autocompleteItems: any;
   loading: any;
+  latLngGobal: any;
   constructor(public navCtrl: NavController,
     public zone: NgZone,
     public geolocation: Geolocation,
     public loadingCtrl: LoadingController,
-    private nativeGeocoder: NativeGeocoder) {
+    private nativeGeocoder: NativeGeocoder,
+    public ApiProvider: ApiProvider) {
 
     this.geocoder = new google.maps.Geocoder;
     let elem = document.createElement("div")
@@ -39,7 +42,12 @@ export class HomePage {
 
   }
   gotoRestaurantList() {
-    this.navCtrl.setRoot(RestaurantListingPage)
+    if (this.latLngGobal != undefined && this.latLngGobal != "") {
+      this.navCtrl.setRoot(RestaurantListingPage, { latlng: this.latLngGobal })
+    } else {
+      this.ApiProvider.showToast("Select location")
+    }
+
   }
 
 
@@ -49,7 +57,7 @@ export class HomePage {
     this.geolocation.getCurrentPosition().then((resp) => {
       let pos = {
         lat: resp.coords.latitude,
-        lng: resp.coords.longitude
+        lng: resp.coords.longitude,
       };
       this.loading.dismiss();
       this.getAddressFromLongLat(pos)
@@ -60,6 +68,7 @@ export class HomePage {
   }
   getAddressFromLongLat(pos) {
     console.log(pos)
+    this.latLngGobal = pos
     let options: NativeGeocoderOptions = {
       useLocale: true,
       maxResults: 5
@@ -78,6 +87,7 @@ export class HomePage {
     }
     this.GoogleAutocomplete.getPlacePredictions({ input: this.autocomplete.input },
       (predictions, status) => {
+        console.log(predictions)
         this.autocompleteItems = [];
         if (predictions) {
           this.zone.run(() => {
@@ -92,6 +102,25 @@ export class HomePage {
   selectSearchResult(item) {
     this.autocompleteItems = [];
     console.log(item)
+    this.getLatLngFromAddress(item)
     this.autocomplete.input = item.description
+  }
+
+  getLatLngFromAddress(item) {
+    var that = this;
+    var geocoder = new google.maps.Geocoder;
+    geocoder.geocode({ 'placeId': item.place_id }, function (results, status) {
+      if (status === 'OK') {
+        let pos = {
+          lat: results[0].geometry.location.lat(),
+          lng: results[0].geometry.location.lng()
+        };
+        that.latLngGobal = pos
+        console.log(that.latLngGobal)
+      } else {
+        this.ApiProvider.showToast('Geocoder failed due to: ' + status);
+      }
+    });
+
   }
 }

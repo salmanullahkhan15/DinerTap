@@ -81,9 +81,10 @@ page-login {
     }
     .bottom-div {
         width: 100%;
-        float: left;
-        // position: absolute;
+        float: left; // position: absolute;
         // bottom: 0;
+        position: absolute;
+        bottom: 0;
     }
     .bottom-left {
         width: 50%;
@@ -110,5 +111,15 @@ page-login {
     .logo-div img {
         width: 40%;
         text-align: center;
+    }
+    .error-div p {
+        color: red;
+        text-align: center;
+    }
+    .error-div {
+        color: red;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 10%;
     }
 }

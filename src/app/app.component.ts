@@ -17,6 +17,7 @@ import { ReservationFormPage } from '../pages/reservation-form/reservation-form'
 import { TypeSelectionPage } from '../pages/type-selection/type-selection';
 import { FilterPage } from '../pages/filter/filter';
 import { TrackOrderMapPage } from '../pages/track-order-map/track-order-map';
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,7 +30,7 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public storage: Storage) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -42,6 +43,7 @@ export class MyApp {
       { title: 'Order Tracking', component: OrderTrackingPage },
       { title: 'Order Tracking Map', component: TrackOrderMapPage },
       { title: 'Coming Soon', component: ComingSoonPage },
+      { title: 'Logout', component: "logout" },
 
 
       // { title: 'Filter', component: FilterPage },
@@ -63,6 +65,11 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    if (page.component == "logout") {
+      this.storage.clear()
+      this.nav.setRoot(LoginPage);
+    } else {
+      this.nav.setRoot(page.component);
+    }
   }
 }

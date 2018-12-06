@@ -31,6 +31,10 @@ import { CheckoutConfirmPage } from '../pages/checkout-confirm/checkout-confirm'
 import { ComingSoonPage } from '../pages/coming-soon/coming-soon';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { GeneralProvider } from '../providers/general/general';
+import { ApiProvider } from '../providers/api/api';
+
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -58,6 +62,7 @@ import { GeneralProvider } from '../providers/general/general';
     StarRatingModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -90,7 +95,8 @@ import { GeneralProvider } from '../providers/general/general';
     BarcodeScanner,
     GeneralProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    GeneralProvider
+    GeneralProvider,
+    ApiProvider
   ]
 })
 export class AppModule { }

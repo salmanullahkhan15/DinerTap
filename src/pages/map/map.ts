@@ -28,6 +28,7 @@ export class MapPage {
   geocoder: any
   autocompleteItems: any;
   loading: any;
+  latLngGobal: any;
 
   constructor(
     public zone: NgZone,
@@ -74,6 +75,7 @@ export class MapPage {
         lat: resp.coords.latitude,
         lng: resp.coords.longitude
       };
+      this.latLngGobal = pos
       let marker = new google.maps.Marker({
         position: pos,
         map: this.map,
@@ -115,6 +117,13 @@ export class MapPage {
     this.autocomplete.input = item.description
     this.geocoder.geocode({ 'placeId': item.place_id }, (results, status) => {
       if (status === 'OK' && results[0]) {
+
+        let pos = {
+          lat: results[0].geometry.location.lat(),
+          lng: results[0].geometry.location.lng()
+        };
+        this.latLngGobal = pos
+        console.log(this.latLngGobal)
         // let position = {
         //   lat: results[0].geometry.location.lat,
         //   lng: results[0].geometry.location.lng
@@ -171,4 +180,22 @@ export class MapPage {
       .then((result: NativeGeocoderReverseResult[]) => this.autocomplete.input = result[0].subThoroughfare + " " + result[0].thoroughfare + " " + result[0].subLocality + " " + result[0].locality)
       .catch((error: any) => console.log(error));
   }
+
+  // getLatLngFromAddress(item) {
+  //   var that = this;
+  //   var geocoder = new google.maps.Geocoder;
+  //   geocoder.geocode({ 'placeId': item.place_id }, function (results, status) {
+  //     if (status === 'OK') {
+  //       let pos = {
+  //         lat: results[0].geometry.location.lat(),
+  //         lng: results[0].geometry.location.lng()
+  //       };
+  //       that.latLngGobal = pos
+  //       console.log(that.latLngGobal)
+  //     } else {
+  //       this.ApiProvider.showToast('Geocoder failed due to: ' + status);
+  //     }
+  //   });
+
+  // }
 }
